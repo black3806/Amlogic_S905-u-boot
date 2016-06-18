@@ -67,6 +67,16 @@
 #define CONFIG_SYS_MAXARGS  64
 #define CONFIG_EXTRA_ENV_SETTINGS \
         "firstboot=1\0"\
+        "s905_dtb=NONE\0"\
+        "start_autoscript="\
+            "if usb start; then run start_usb_autoscript;fi;if mmcinfo; then run start_mmc_autoscript;fi;"\
+            "\0"\
+        "start_mmc_autoscript="\
+            "if fatload mmc 0 1020000 s905_autoscript; then autoscr 1020000; fi"\
+            "\0"\
+        "start_usb_autoscript="\
+            "if fatload usb 0 1020000 s905_autoscript; then autoscr 1020000; fi"\
+            "\0"\
         "upgrade_step=0\0"\
         "loadaddr=1080000\0"\
         "outputmode=1080p60hz\0" \
@@ -214,7 +224,7 @@
             "run storeargs;"\
             "run upgrade_key;" \
             "run switch_bootmode;"
-#define CONFIG_BOOTCOMMAND "run storeboot"
+#define CONFIG_BOOTCOMMAND "run start_autoscript;run storeboot"
 
 //#define CONFIG_ENV_IS_NOWHERE  1
 #define CONFIG_ENV_SIZE   (64*1024)
@@ -340,6 +350,7 @@
 #define CONFIG_CMD_I2C 1
 #define CONFIG_CMD_MEMORY 1
 #define CONFIG_CMD_FAT 1
+#define CONFIG_CMD_EXT4 1
 #define CONFIG_CMD_GPIO 1
 #define CONFIG_CMD_RUN
 #define CONFIG_CMD_REBOOT 1
