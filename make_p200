@@ -1,6 +1,7 @@
 #!/bin/bash
 
-make SOC=gxb distclean
+#make SOC=gxb distclean
+make distclean
 
 export PATH=$PATH:/opt/gcc-linaro-aarch64-none-elf-4.8-2013.11_linux/bin/
 export PATH=$PATH:/opt/CodeSourcery/Sourcery_G++_Lite/bin
