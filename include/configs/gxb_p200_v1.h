@@ -69,7 +69,7 @@
         "firstboot=1\0"\
         "s905_dtb=NONE\0"\
         "start_autoscript="\
-            "if mmcinfo; then run start_mmc_autoscript;fi;if usb start; then run start_usb_autoscript;fi;"\
+            "if usb start; then run start_usb_autoscript; if mmcinfo; then run start_mmc_autoscript;fi;fi;"\
             "\0"\
         "start_mmc_autoscript="\
             "if fatload mmc 0 1020000 s905_autoscript; then autoscr 1020000; fi"\
@@ -84,7 +84,7 @@
         "cvbsmode=576cvbs\0" \
         "display_width=1920\0" \
         "display_height=1080\0" \
-        "display_bpp=16\0" \
+        "display_bpp=32\0" \
         "display_color_index=16\0" \
         "display_layer=osd1\0" \
         "display_color_fg=0xffff\0" \
