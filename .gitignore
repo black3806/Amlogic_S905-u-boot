@@ -17,11 +17,11 @@
 *.order
 *.elf
 *.swp
-*.bin
+#*.bin
 *.patch
 *.cfgtmp
 *.diff
-*.bl2
+#*.bl2
 *.tpl
 *.efuse
 *.encrypt
@@ -41,7 +41,7 @@ customer/
 /MLO*
 /SPL
 /System.map
-/u-boot*
+#/u-boot*
 /boards.cfg
 
 #
