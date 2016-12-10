@@ -245,7 +245,7 @@
 #define CONFIG_CPU_CLK					1536 //MHz. Range: 600-1800, should be multiple of 24
 
 /* ddr */
-#define CONFIG_DDR_SIZE					1024 //MB
+#define CONFIG_DDR_SIZE					2048 //MB
 #define CONFIG_DDR_CLK					912  //MHz, Range: 384-1200, should be multiple of 24
 #define CONFIG_DDR_TYPE					CONFIG_DDR_TYPE_DDR3
 /* DDR channel setting, please refer hardware design.
@@ -253,9 +253,9 @@
  *    CONFIG_DDR0_RANK01_SAME  : one channel use two rank with same setting
  *    CONFIG_DDR0_RANK01_DIFF  : one channel use two rank with diff setting
  *    CONFIG_DDR01_SHARE_AC    : two channels  */
-#define CONFIG_DDR_CHANNEL_SET			CONFIG_DDR0_RANK01_SAME
+#define CONFIG_DDR_CHANNEL_SET			CONFIG_DDR0_RANK01_DIFF
 #define CONFIG_DDR_FULL_TEST			0 //1 for ddr full test
-#define CONFIG_NR_DRAM_BANKS			1
+#define CONFIG_NR_DRAM_BANKS			2
 /* ddr power saving */
 #define CONFIG_DDR_ZQ_POWER_DOWN
 #define CONFIG_DDR_POWER_DOWN_PHY_VREF
